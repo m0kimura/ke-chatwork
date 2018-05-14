@@ -16,11 +16,11 @@ module.exports=class keChatwork extends keUtility {
     };
     this.Option.hostname='api.chatwork.com';
   }
-/**
- * ルームリストの取得
- * @return {Object} ルーム名、IDオブジェクト
- * @method
- */
+  /**
+  * ルームリストの取得
+  * @return {Object} ルーム名、IDオブジェクト
+  * @method
+  */
   getRooms() {
     if(!this.Option.headers['X-ChatwworkToken']) {
       this.Option.headers['X-ChatwworkToken']=this.CFG.chatworkKey;
@@ -34,13 +34,13 @@ module.exports=class keChatwork extends keUtility {
     }
     return this.Rooms;
   }
-/**
- * ルームボードにメッセージ送信
- * @param  {String} msg  送信メッセージ
- * @param  {String} room ルーム名
- * @return {Bool}        true/false OK/NG
- * @method
- */
+  /**
+  * ルームボードにメッセージ送信
+  * @param  {String} msg  送信メッセージ
+  * @param  {String} room ルーム名
+  * @return {Bool}        true/false OK/NG
+  * @method
+  */
   pushMessage(msg, room) {
     let op=this.Option, rc;
     if(!this.Rooms){this.getRooms();}
